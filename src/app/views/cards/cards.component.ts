@@ -12,6 +12,7 @@ import Swal from 'sweetalert2';
 })
 export class CardsComponent implements OnInit {
   userId!: string | null;
+  phoneNumberRegex = /^\d{3}\d{2}\d{2}\d{2}$/;
 
   constructor(private cardService: CardService, private authService: AuthService, private auth: AngularFireAuth, private router: Router) {}
 
@@ -23,6 +24,7 @@ export class CardsComponent implements OnInit {
   description: string = '';
   imageSrc: string = '';
   isApproved: string = 'Unknown';
+  phoneNumber: string = '';
 
   updateDescriptionDisplay(event: any) {
     this.description = event.target.value;
@@ -54,10 +56,15 @@ export class CardsComponent implements OnInit {
     }
     const currentDate = new Date().toISOString();
 
+    if (!this.phoneNumberRegex.test(this.phoneNumber)) {
+      Swal.fire('Error', 'Please enter a valid phone number.', 'error');
+      return;
+    }
     const card: CardInterface = {
       id: '',
       title: this.selectedOption,
       description: this.description,
+      phoneNumber: this.phoneNumber,
       imageURL:
       this.imageSrc ||
       'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png',
@@ -71,6 +78,10 @@ export class CardsComponent implements OnInit {
       this.selectedOption = '';
       this.description = '';
       this.imageSrc = '';
+
+      this.phoneNumber = '';
+
+
       this.isApproved = 'Unknown';
       console.log('Added Card');
       Swal.fire('Card Added Successfuly!', '', 'success');

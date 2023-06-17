@@ -9,6 +9,7 @@ export interface CardInterface {
   creatorID: string;
   createdAt: string;
   isApproved: string;
+  phoneNumber: string;
 }
 
 @Injectable({
