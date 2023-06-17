@@ -1,0 +1,32 @@
+
+<div class="four" id="reg" *ngIf="!loggedIn">
+  <div class="botImage">
+    <img src="assets/images/register/registerBot.png" alt="Bot">
+  </div>
+  <div class="form-modal">
+    <div class="form-toggle">
+      <button id="login-toggle" (click)="toggleLogin()">log in</button>
+      <button id="signup-toggle" (click)="toggleSignup()">sign up</button>
+    </div>
+    <div id="login-form">
+      <form>
+        <p style="color: black;">Admin email: luka@gmail.com, password: nika444</p>
+        <input id="EmailInput-LI" type="text" [placeholder]="emailPlaceholder" required/>
+        <input id="passwordInput-LI" type="password" placeholder="Enter password" required/>
+        <button id="log-btn" *ngIf="showLoginButton" type="button" class="btn login" (click)="loginUser()">login</button>
+        <button id="forgot-btn" type="button" class="btn forgot" (click)="forgotPassword()">
+          {{ showLoginButton ? 'Forgot Password?' : 'Reset Password' }}
+        </button>
+      </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <div id="signup-form">
+      <form>
+        <input id="email-SU" type="email" placeholder="Enter your email" required/>
+        <input id="passwordInput-SU" type="password" placeholder="Create password" required/>
+        <button id="reg-btn" type="button" class="btn signup" (click)="registerUser()">create account</button> 
+      </form>
+    </div> 
+  </div>
+</div>
+

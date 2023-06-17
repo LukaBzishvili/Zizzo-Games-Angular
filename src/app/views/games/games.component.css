@@ -1,0 +1,225 @@
+/*Dungeon Game*/
+
+.dung-background{
+    color: black;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+  }
+  
+  #text {
+    height: 100%;
+    background-color: #eaf2ff;
+  }
+
+  .dung-background .dunBack{
+    border-radius: 20px;
+    width: 85%;
+    position: absolute;
+  }
+  
+  .gameInfo{
+    position: relative;
+    background: white;
+    border-radius: 20px;
+    width: 50%;
+    height: 30vw;
+    left: -15%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 20px auto;
+    z-index: 2;
+    display: flex;
+    gap: 70px;
+    padding: 2%;
+  }
+  
+  .gameInfo .dunWall{
+    width: 20%;
+    border-radius: 10px;
+  }    
+  
+  .game-image{
+    border: 7px solid #eaf2ff;
+    border-radius: 40px;
+    width: 25%;
+    height: auto;
+    transition: all 0.5s ease;
+  }
+  
+  .textInfo{
+    display: flex;
+    flex-direction: column;
+    gap:30px;
+  }
+  
+  .gameLogo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    justify-content: start;
+    gap: 20px;
+  }
+  
+  .gameLogoText{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+  }
+  
+  .cardText p{
+    font-size: 1vw;
+    font-weight: 200;
+  }
+  
+  .cardText{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .storeImages{
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+  }
+  
+  .Cat{
+    left: 15%;
+  }
+  
+  @media only screen and (max-width: 1200px){
+
+    .dung-background{
+      height: 100%;
+    }
+
+    #text{
+      height: 80%;
+    }
+
+    .gameInfo{
+      width: 50vw;
+      height: 35vw;
+      gap: 5vw;
+      padding: 5vw;
+    }
+    
+    .gameInfo .dunWall{
+      width: 14vw;
+    }    
+    
+    .game-image{
+      width: 8vw;
+    }
+    
+    .textInfo{
+      gap: 1vw;
+    }
+    
+    .gameLogo{
+      font-size: 1.5vw;
+      gap: 1vw;
+    }
+    
+    .cardText p{
+      font-size: 1.1vw;
+      font-weight: 200;
+    }
+    
+    .cardText{
+      gap: 1vw;
+    }
+    
+    .storeImages{
+      width: 20vw;
+      height: 5vw;
+    }
+    
+    .appStore{
+      width: 8vw;
+    }
+    .playStore{
+      width: 9vw;
+    }
+  }
+  
+  @media only screen and (max-width: 768px){
+  
+    .dunBack{
+      display: none;
+    }
+  
+    .dung-background{
+      display: flex;
+      flex-direction: column;
+    }
+  
+    .gameInfo{
+      width: 100%;
+      height: 110%;
+      left: 0;
+      gap: 5vw;
+      padding: 5vw;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .gameInfo .dunWall{
+      display: none;
+    }   
+    
+    .game-image{
+      width: 20vw;
+    }
+    
+    .textInfo{
+      gap: 1vw;
+    }
+    
+    .gameLogo{
+      font-size: 5vw;
+      gap: 1vw;
+      display: flex;
+      justify-content: center;
+    }
+    
+    .cardText p{
+      font-size: 4vw;
+      font-weight: 200;
+    }
+    
+    .cardText{
+      gap: 1vw;
+      height: 40vw;
+    }
+    
+    .storeImages{
+      width: 75vw;
+      height: 10vw;
+    }
+    
+    .appStore{
+      width: 30vw;
+    }
+    .playStore{
+      width: 33vw;
+    }
+}
+  
+@media only screen and (max-width: 360px){
+    .gameInfo{
+    width: 100%;
+    height: 70%;
+    }
+    #text{
+    padding: 0;    
+    }
+}

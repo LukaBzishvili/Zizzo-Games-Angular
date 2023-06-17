@@ -1,0 +1,32 @@
+<main class="fullsize">
+  <section class="create-post">
+    <aside class="left">
+      <h3>Create post</h3>
+      <div class="form-group">
+        <select class="select" [(ngModel)]="selectedOption">
+          <option value="Community Manager">Community Manager</option>
+          <option value="QA Tester">QA Tester</option>
+          <option value="Game Developer">Game Developer</option>
+          <option value="Game Designer">Game Designer</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="descriptionInput" class="form-label">Description</label>
+        <textarea [(ngModel)]="description" id="descriptionInput" placeholder="Tell us about yourself" class="form-control" (keyup)="updateDescriptionDisplay($event)"></textarea>
+      </div>
+      <div class="form-group">
+        <input type="file" id="imageInput" class="form-control" (change)="onFileSelected($event)">
+      </div>
+      <div>
+        <button class="btn btn-primary" id="submitBtn" (click)="createPost()">Create post</button>
+      </div>
+    </aside>
+    <aside class="right">
+      <h3>Generated post</h3>
+      <article id="displayCard" class="flex-center">
+        <img [src]="imageSrc" alt="Generated Image" *ngIf="imageSrc">
+        <span id="descriptionDisplay">{{ description }}</span>
+      </article>
+    </aside>
+  </section>
+</main>

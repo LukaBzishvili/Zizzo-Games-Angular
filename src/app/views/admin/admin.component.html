@@ -1,0 +1,26 @@
+<div class="job-cards" *ngIf="!isLoading; else loadingTemplate">
+  <div *ngFor="let card of cards" class="job-card">
+    <h3 class="card-title">{{ card.title }}</h3>
+    <p class="card-description">{{ card.description }}</p>
+    <img [src]="card.imageURL" alt="Card Image" class="card-image" />
+    <p class="card-creator">Created By: {{ card.creatorID }}</p>
+    <p class="card-created-at">Created At: {{ card.createdAt }}</p>
+
+    <div *ngIf="card.isApproved === 'Unknown'" class="buttons">
+      <button (click)="approveCard(card)" class="btn-approve">Approve</button>
+      <button (click)="declineCard(card)" class="btn-decline">Decline</button>
+    </div>
+
+    <div *ngIf="card.isApproved !== 'Unknown'">
+      <p class="card-approved" [ngStyle]="{'color': card.isApproved === 'Approved' ? 'green' : 'red'}">
+        {{ card.isApproved }}
+      </p>
+    </div>
+  </div>
+</div>
+<ng-template #loadingTemplate>
+  <div class="loading-animation">
+    <div class="loading-spinner"></div>
+    <p class="loading-text">Loading...</p>
+  </div>
+</ng-template>

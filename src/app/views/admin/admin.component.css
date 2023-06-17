@@ -1,0 +1,112 @@
+.job-cards {
+    margin-top: 90px;
+    padding: 60px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .job-card {
+    width: calc(33.33% - 25px); /* Adjust the width as per your requirement */
+    margin-bottom: 20px;
+    padding: 10px;
+    background-color: #f0f0f0;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .card-approved{
+    text-align: center;
+  }
+
+  .btn-approve{
+    background-color: rgba(0, 128, 0, 0.476);
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+    border: none;
+  }
+
+  .btn-decline{
+    background-color: rgba(255, 0, 0, 0.466);
+    border-radius: 10px;
+    width: 80px;
+    height: 30px;
+    border: none;
+  }
+
+  .buttons{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    word-wrap: break-word;
+    color: black;
+  }
+  
+  .card-description {
+    font-size: 14px;
+    margin-bottom: 10px;
+    flex-grow: 1;
+    word-wrap: break-word;
+    color: black;
+  }
+  
+  .card-image {
+    /* flex-grow: 1; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+  }
+  
+  .card-creator,
+  .card-created-at {
+    font-size: 12px;
+    color: gray;
+    margin-bottom: 5px;
+    /* flex-grow: 1; */
+  }
+  
+
+  /* Loading Animation */
+
+  .loading-animation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+  }
+  
+  .loading-spinner {
+    border: 8px solid rgba(0, 0, 0, 0.1);
+    border-left-color: #1a73e8;
+    animation: spin 1s infinite linear;
+    border-radius: 50%;
+    width: 70px;
+    height: 70px;
+  }
+  
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  .loading-text {
+    margin-left: 10px;
+    color: black;
+  }
+  

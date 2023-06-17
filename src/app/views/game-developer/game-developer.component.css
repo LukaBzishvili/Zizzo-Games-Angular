@@ -1,0 +1,137 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-color: #efefef;
+}
+
+.career{
+    margin: 0 auto;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    width: 90%;
+    background-color: rgb(5, 5, 93);
+    margin-top: 110px;
+    margin-bottom: 90px;
+    border-radius: 20px;
+}
+
+.txtp{
+    color: white;
+}
+
+.comm h2,
+.comm .bottom p{
+    color: black;
+}
+
+.right{
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end;
+}
+
+.right img{
+    width: 387px;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    width: 50%;
+    margin: 0 auto;
+}
+
+.b-text{
+    display: flex;
+    flex-direction: row;
+    gap: 50px;
+    margin-bottom: 90px;
+}
+
+.bottom a{
+    font-size: 16px;
+    font-weight: 1000;
+    color: white;
+    border: none;
+    width: 120px;
+    height: 50px;
+    margin: 0 auto;
+    margin-bottom: 100px;
+    background-color: #b61cdd;
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+@media only screen and (max-width: 1024px) {
+    .bottom{
+        font-size: 2vw;
+    }
+
+    .career-text{
+        font-size: 1.5vw;
+    }
+
+    .right{
+        justify-content: center;
+        align-items: center;
+        height: 41vw;
+        width: 38vw;
+    }
+
+    .career{
+        height: 41vw;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .b-text{
+        font-size: 3vw;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .career-text{
+        font-size: 2.4vw;
+        margin-top: 70px;
+    }
+
+    .career{
+        height: 41vw;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        height: 80vw;
+        width: 60%;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .b-text{
+        font-size: 4vw;
+    }
+
+    .career-text{
+        font-size: 4vw;
+        margin-top: 70px;
+        text-align: center;
+    }
+
+    .right{
+        display: none;
+    }
+
+    .career{
+        height: 300px;
+        width: 70%;
+    }
+}

@@ -1,0 +1,22 @@
+<header class="header" id="header">
+  <nav class="navbar container">
+    <a routerLink="/" class="brand">Game Shop</a>
+    <div class="burger" id="burger" (click)="toggleNavbar()">
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+      <span class="burger-line"></span>
+    </div>
+    <div class="menu" id="menu" [ngClass]="{ 'is-active': isNavbarActive }">
+      <ul class="menu-inner">
+        <li class="menu-item"><a routerLink="/" class="menu-link">Home</a></li>
+        <li class="menu-item"><a routerLink="/careers" class="menu-link">Careers</a></li>
+        <li class="menu-item"><a routerLink="/aboutUs" class="menu-link">About</a></li>
+        <li class="menu-item" id="menu-admin" *ngIf="isAdmin"><a routerLink="/admin">Appliances</a></li>
+        <li class="menu-item" id="menu-signIn" *ngIf="!loggedIn"><a href="#reg" class="menu-link">Sign In</a></li>
+        <!-- <li class="menu-item" id="menu-profile"><a routerLink="/pfpSettings" class="menu-link" *ngIf="loggedIn">Profile</a></li> -->
+        <button id="secretContent" class="signOutButton" *ngIf="loggedIn" (click)="logout()">Log Out</button> 
+      </ul>
+    </div>
+    <a href="#text" class="menu-block">Discover</a>
+  </nav>
+</header>

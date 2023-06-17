@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap");
+
+/* Set default margin and padding to 0 for all elements */
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+}
+
+.right img{
+  width: 289px;
+  margin-top: 104px;
+}
+
+/* Style the hero image */
+.hero-image {
+    margin-top: 60px;
+  background-color: #1038b0a4;
+  background-size: cover;
+  height: 400px;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+} 
+
+
+.hero-text .image{
+  margin-top: 110px;
+}
+
+.hero-text {
+  /* text-align: center; */
+  margin-left: 40px;
+  color: #fff;
+  text-shadow: 1px 1px #333;
+}
+
+.hero-text h2 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero-text p {
+  font-size: 1rem;
+}
+
+/* Style the job opportunities */
+.opportunities-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin: 30px auto;
+  max-width: 800px;
+}
+
+.opportunity {
+  background-color: #f2f2f2;
+  box-shadow: 1px 1px 5px #ccc;
+  padding: 20px;
+  margin-bottom: 30px;
+  width: 300px;
+  text-align: center;
+  border-radius: 20px;
+  box-sizing: border-box;
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+
+.opportunity img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.opportunity h2 {
+  margin-bottom: 10px;
+  color: black;
+}
+
+.opportunity p {
+  margin-bottom: 20px;
+  color: black;
+}
+
+.apply-button {
+  background-color: #591f97;
+  color: #fff;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 20px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+.apply-button:hover {
+  background-color: #666;
+}
+
+.p-comm{
+  font-size: 14px;
+}
+
+@keyframes fade-in {
+  0% {
+      opacity: 0;
+      transform: scale(0.8);
+  }
+  100% {
+      opacity: 1;
+      transform: scale(1);
+  }
+}
+
+/* Add animation to the opportunity */
+.opportunity {
+  animation: fade-in 1s ease-in-out;
+}
+
+/* Add animation to the opportunity elements */
+.opportunity img,
+.opportunity h2,
+.opportunity p,
+.apply-button {
+  animation: fade-in 1s ease-in-out;
+  animation-delay: 0.5s;
+} 
+
+@media only screen and (max-width: 1024px) {
+  .hero-text h2 {
+    font-size: 3vw;
+  }
+  
+  .hero-text p {
+    font-size: 1.8vw;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .hero-image{
+    margin-top: 3vw;
+    flex-direction: column;
+    height: 394px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-text{
+    margin-top: 40px;
+    margin-left: 0;
+  }
+
+  .hero-text h2 {
+    font-size: 5vw;
+  }
+  
+  .hero-text p {
+    font-size: 3vw;
+  }
+  
+  .right img{
+    display: none;
+  }
+} 
+
+@media only screen and (max-width: 360px) {
+
+  .hero-image{
+    margin-top: 5vw;
+    height: 294px;
+    text-align: center;
+    justify-content: center;
+  }
+
+  .hero-text{
+    margin-top: 40px;
+    margin-left: 0;
+  }
+
+  .hero-text h2 {
+    font-size: 9vw;
+  }
+  
+  .hero-text p {
+    font-size: 5vw;
+  }
+}
+
+

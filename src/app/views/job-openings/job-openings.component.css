@@ -1,0 +1,159 @@
+.jobs {
+    height: 100%;
+    margin: 0 auto;
+    padding: 100px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eaf2ff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+  }
+  
+  .jobs p {
+    font-weight: 400;
+    color: rgb(15, 7, 80);
+  }
+  
+  .comm{
+    font-size: 35px;
+  }
+  
+  .comments {
+    flex: 1;
+  }
+  
+  h2 {
+    font-size: 27px;
+    font-weight: bold;
+    margin: 0;
+    margin-bottom: 10px;
+  }
+  
+  .tagline {
+    font-size: 20px;
+    margin: 0;
+    margin-bottom: 20px;
+  }
+  
+  .purple-bg {
+    background-color: #8e44ad;
+    color: #fff;
+    padding: 2px 5px;
+    border-radius: 5px;
+  }
+  
+  .openings-btn {
+    padding: 10px 20px;
+    font-size: 18px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .openings-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  .bottom-image {
+    border-radius: 20px;
+    width: 60%;
+    display: block;
+    margin: 20px 0;
+    max-width: 100%;
+  }
+  
+  .jobs a{
+    color: white;
+  }
+  
+  .right-image {
+    display: block;
+    max-width: 100%;
+    border-radius: 5px;
+  }
+  
+  @media only screen and (max-width: 1200px){
+    .jobs{
+      padding: 3vw;
+    }
+  
+    .jobs p{
+      font-size: 3vw;
+    }
+  
+    .jobs button{
+      font-size: 2vw;
+    }
+  
+    .right-image{
+      width: 30vw;
+    }
+  
+    .bottom-image{
+      width: 50vw;
+    }
+  }
+  
+  @media only screen and (max-width: 768px){
+    .jobs{
+      height: 90vw;
+      padding: 4vw;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .comments{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+    }
+  
+    .right-image{
+      display: none;
+    }
+  
+    .comments button{
+      width: 50%;
+    }
+  
+    .bottom-image{
+      margin: 0 auto;
+      width: 70vw;
+    }
+  
+    .jobs p{
+      font-size: 4vw;
+    }
+  
+    .jobs button{
+      font-size: 3vw;
+    }
+  
+    .right-image{
+      width: 30vw;
+    }
+  }
+  @media only screen and (max-width: 360px){
+    .bottom-image{
+      display: none;
+    }
+  
+    .jobs{
+      padding: 4vw;
+    }
+  
+    .jobs p{
+      font-size: 5vw;
+    }
+  
+    .jobs button{
+      font-size: 4vw;
+    }
+  }
