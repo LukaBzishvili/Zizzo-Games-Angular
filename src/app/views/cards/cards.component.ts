@@ -3,6 +3,7 @@ import { CardInterface, CardService } from 'src/app/services/card.service';
 import { AuthService } from 'src/app/services/auth.service';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { Router } from '@angular/router';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-cards',
@@ -42,8 +43,8 @@ export class CardsComponent implements OnInit {
 
   async createPost() {
     const userId = await this.getCurrentUserId();
-    if (!this.selectedOption || !this.description ) { //|| !userId
-      alert('Please fill in all required fields.');
+    if (!this.selectedOption || !this.description ) {
+      Swal.fire('Error', 'Please fill in all required fields.', 'error');
       return;
     }
     else if( !userId){
@@ -72,9 +73,10 @@ export class CardsComponent implements OnInit {
       this.imageSrc = '';
       this.isApproved = 'Unknown';
       console.log('Added Card');
-
+      Swal.fire('Card Added Successfuly!', '', 'success');
     } catch (error) {
       console.log(error);
+      Swal.fire('Error', 'Card could not be added.', 'error');
     }
   }
 

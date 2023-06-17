@@ -3,6 +3,7 @@ import { CanActivate, Router } from '@angular/router';
 import { AuthService } from '../services/auth.service';
 import { AuthFormComponent } from '../views/auth-form/auth-form.component';
 import { AdminService } from '../services/admin.service';
+import Swal from 'sweetalert2';
 
 @Injectable({
 providedIn: 'root'
@@ -16,7 +17,7 @@ async canActivate(): Promise<boolean> {
 
     if (!isLoggedIn || !isAdmin) {
     this.router.navigate(['']);
-    alert('Please log in first.');
+    // Swal.fire('Please log in first.', '', 'error');
     return false;
     }
 
