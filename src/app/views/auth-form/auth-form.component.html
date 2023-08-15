@@ -1,3 +1,6 @@
+<!-- <div>
+  <button (click)="Check()">CHECK</button>
+</div> -->
 
 <div class="four" id="reg" *ngIf="!loggedIn">
   <div class="botImage">
@@ -24,6 +27,8 @@
       <form>
         <input id="email-SU" type="email" placeholder="Enter your email" required/>
         <input id="passwordInput-SU" type="password" placeholder="Create password" required/>
+        <input id="nameInput-SU" type="text" placeholder="Choose username" required/>
+        <input id="age-SU" type="number" placeholder="Enter your age" required/>
         <button id="reg-btn" type="button" class="btn signup" (click)="registerUser()">create account</button> 
       </form>
     </div> 

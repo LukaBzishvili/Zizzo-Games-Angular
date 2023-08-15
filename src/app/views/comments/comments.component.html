@@ -1,0 +1,19 @@
+<section class="wrapper">
+    <section class="card">
+      <app-fan-page [Fancard]="Fancard" [isSingleCard]="true"></app-fan-page>
+    </section>
+    <section class="comments">
+      <h3>Comments</h3>
+      <hr>
+      <article class="mb-3">
+        <div class="comment" *ngFor="let comment of Fancard.comments">
+          <!-- <p><span>{{comment.email}}</span> : {{comment.comment}}</p> -->
+          <p><span>{{comment}}</span> : {{comment}}</p>
+        </div>
+      </article>
+    <div class="input-group mb-3" *ngIf="email">
+        <input [(ngModel)]="comment" type="text" class="form-control" placeholder="Enter comment" (keypress)="onKeyPress($event)">
+        <span (click)="sendComment()" class="input-group-text" id="basic-addon2"><i class="bi bi-send"></i></span>
+    </div>
+</section>
+</section>

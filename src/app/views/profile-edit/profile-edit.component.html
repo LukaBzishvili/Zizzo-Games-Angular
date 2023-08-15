@@ -1,0 +1,55 @@
+<body class="body" *ngIf="!isLoading; else loadingTemplate">
+  <div class="card">
+    <div class="card__header">
+      <div class="card__profile">
+        <img class="pfp" [src]="userImage || 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png'" alt="A man smiling" />
+        <input type="file" id="imageInput" accept="image/*" #imageInput (change)="updateUserImage(imageInput)">
+      </div>
+      <div class="card__name">
+        <input class="name" type="text" [(ngModel)]="userName" placeholder="Enter your Name">
+      </div>
+      <div class="card__button">
+        <button class="save-btn" style="border-radius: 20px;" (click)="saveProfile()">Save</button>
+      </div>
+    </div>
+    <hr class="border" />
+    <div class="card__insights">
+      <div class="card__heading">
+        <div class="heading">Insights</div>
+        <div class="date">May 24 - June 24</div>
+      </div>
+      <div class="insights">
+        <div class="insight">
+          <div class="heading">Email:</div>
+          <div class="number">
+            {{ userEmail }}
+          </div>
+        </div>
+        <div class="insight">
+          <div class="heading">Age:</div>
+          <div class="number">
+            <input class="age" type="number" [(ngModel)]="ageInputValue">
+            <!-- #ageInput (input)="ageInputValue = ageInputValue < 0 ? 0 : ageInputValue" -->
+          </div>
+        </div>
+
+        <div class="insight">
+          <div class="heading">Years of Experience</div>
+          <div class="number">
+            <input class="experience" type="number" [(ngModel)]="experienceInputValue">
+            <!-- #experienceInput (input)="experienceInputValue = experienceInputValue < 0 ? 0 : experienceInputValue" -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="index.html">Go Back</a>
+  </div>
+  <div class="loading"></div>
+</body>
+
+<ng-template #loadingTemplate>
+  <div class="loading-animation">
+    <div class="loading-spinner"></div>
+    <p class="loading-text">Loading...</p>
+  </div>
+</ng-template>

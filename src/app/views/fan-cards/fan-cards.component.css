@@ -1,0 +1,113 @@
+/* Styles for the main container */
+.fullsize {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f2f2f2;
+    border-radius: 30px;
+
+  }
+  
+  /* Styles for the create post section */
+  .create-post {
+    /* width: 55vw; */
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);    
+    border-radius: 30px;
+  }
+  
+  /* Styles for the left section */
+  .left {
+    flex: 1;
+    margin-right: 20px;
+  }
+  
+  .left h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  .select {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-label {
+    font-weight: bold;
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  /* Styles for the right section */
+  .right {
+    flex: 1;
+  }
+  
+  .right h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  #displayCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #displayCard img {
+    max-width: 20vw;
+    margin-bottom: 10px;
+  }
+  
+  #descriptionDisplay {
+    color: black;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+  }
+
+  .btn-primary{
+    font-size: 14px;
+    width: 100px;
+    height: 25px;
+    background-color: rgb(105, 105, 226);
+  }
+  
+
+  #displayCard {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  #displayCard img {
+    max-width: 20vw;
+    margin-bottom: 10px;
+  }
+  
+  #descriptionDisplay {
+    color: black;
+    font-size: 14px;
+    line-height: 1.4;
+    text-align: center;
+    max-width: 20vw; /* Add this line */
+    overflow-wrap: break-word; /* Add this line */
+  }

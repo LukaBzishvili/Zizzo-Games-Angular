@@ -514,3 +514,37 @@ header video {
 .alert.ng-leave-active {
   opacity: 0;
 }
+
+
+
+/* Loading Animation */
+
+.loading-animation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.loading-spinner {
+  border: 8px solid rgba(0, 0, 0, 0.1);
+  border-left-color: #1a73e8;
+  animation: spin 1s infinite linear;
+  border-radius: 50%;
+  width: 70px;
+  height: 70px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.loading-text {
+  margin-left: 10px;
+  color: black;
+}

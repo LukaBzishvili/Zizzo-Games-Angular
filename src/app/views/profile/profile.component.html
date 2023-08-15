@@ -1,0 +1,57 @@
+<body class="body" *ngIf="!isLoading; else loadingTemplate">
+    <div class="card">
+    <div class="card__header">
+        <div class="card__profile">
+            <img class="pfp" [src]="userImage || 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png'" alt="A man smiling" />
+        </div>      
+            <div class="card__name">
+            <h2>{{ userName }}</h2>
+            </div>
+            <div class="card__button">
+            <a href="/profileEdit"><button><span class="span-edit">Edit</span></button></a>
+            </div>
+        </div>
+        <hr class="border" />
+        <div class="card__insights">
+            <div class="card__heading">
+            <div class="heading">Insights</div>
+            <div class="date">
+                May 24 - June 24
+            </div>
+            </div>
+            <div class="insights">
+                <div class="insight">
+                    <div class="heading">
+                    Email:
+                    </div>
+                    <div class="number">
+                    {{ userEmail }}
+                    </div>
+                </div>              
+            <div class="insight">
+                <div class="heading">
+                Age:
+                </div>
+                <div class="number">
+                {{ userAge }}
+                </div>
+            </div>
+            <div class="insight">
+                <div class="heading">
+                Years of Experience
+                </div>
+                <div class="number">
+                {{userExperience}} 
+                </div>
+            </div>
+        </div>
+    </div>
+    <a href="index.html">Go Back</a>
+    </div>
+</body>
+<ng-template #loadingTemplate>
+    <div class="loading-animation">
+      <div class="loading-spinner"></div>
+      <p class="loading-text">Loading...</p>
+    </div>
+</ng-template>

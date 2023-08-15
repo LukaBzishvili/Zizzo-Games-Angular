@@ -13,10 +13,10 @@
         <li class="menu-item"><a routerLink="/aboutUs" class="menu-link">About</a></li>
         <li class="menu-item" id="menu-admin" *ngIf="isAdmin"><a routerLink="/admin">Appliances</a></li>
         <li class="menu-item" id="menu-signIn" *ngIf="!loggedIn"><a href="#reg" class="menu-link">Sign In</a></li>
-        <!-- <li class="menu-item" id="menu-profile"><a routerLink="/pfpSettings" class="menu-link" *ngIf="loggedIn">Profile</a></li> -->
+        <li class="menu-item" id="menu-signIn" *ngIf="loggedIn"><a href="/profile" class="menu-link">profile</a></li>
         <button id="secretContent" class="signOutButton" *ngIf="loggedIn" (click)="logout()">Log Out</button> 
       </ul>
     </div>
-    <a href="#text" class="menu-block">Discover</a>
+    <a routerLink="/fanPage" class="menu-block">Community</a>
   </nav>
 </header>

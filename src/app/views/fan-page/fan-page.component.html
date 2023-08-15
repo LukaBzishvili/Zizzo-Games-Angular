@@ -1,0 +1,37 @@
+<a href="fanCardPage" class="btn btn--block card__btn" *ngIf="(isUserLoggedIn() | async)">Create Post</a>
+<div class="loggedOut" *ngIf="!(isUserLoggedIn() | async)">
+  <h1><a href="#reg"><span class="highlight">Register now</span></a><br> Become part of our Community</h1>
+</div>
+<ul class="cards" *ngIf="!isLoading; else loadingTemplate">
+  <div class="line"></div>
+    <li class="cards__item" *ngFor="let card of cards">
+      <div class="card">
+      <img [src]="card.imageURL" alt="Card Image" class="card__image card__image--fence">
+      <div class="card__content">
+        <div class="card__info">
+          <div class="card__creator">
+            <img class="pfp" [src]="card.creatorImage || 'https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png'" alt="A man smiling" />
+            <p>{{ card.creatorName }}</p>
+          </div>
+          <span class="react__span" *ngIf="!isSingleCard">
+            <span class="icons" *ngIf="isUserLoggedIn() | async">
+            </span>
+          </span>
+        </div>
+        <div class="line"></div>
+        <div class="card__title">{{ card.title }}</div>
+        <p class="card__text">{{ card.description }}</p>
+        <p class="card__createdAt">{{ card.createdAt }}</p>
+      </div>
+    </div>
+  </li>
+</ul>
+<script src="https://fontawesome.com/icons/heart?f=classic&s=regular"></script>
+
+
+<ng-template #loadingTemplate>
+  <div class="loading-animation">
+    <div class="loading-spinner"></div>
+    <p class="loading-text">Loading...</p>
+  </div>
+</ng-template>

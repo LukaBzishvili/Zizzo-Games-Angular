@@ -56,6 +56,7 @@ export class HeaderComponent implements OnInit {
       .logout()
       .then(() => {
         console.log('Success');
+        localStorage.removeItem('token');
       })
       .catch((error) => {
         console.log('Logout Error:', error);

@@ -76,37 +76,19 @@
     margin-bottom: 5px;
     /* flex-grow: 1; */
   }
-  
 
-  /* Loading Animation */
-
-  .loading-animation {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-  }
-  
-  .loading-spinner {
-    border: 8px solid rgba(0, 0, 0, 0.1);
-    border-left-color: #1a73e8;
-    animation: spin 1s infinite linear;
-    border-radius: 50%;
-    width: 70px;
-    height: 70px;
-  }
-  
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
+  @media only screen and (max-width: 700px){
+    .job-cards{
+      display: flex;
+      flex-direction: column;
+      gap: 25px;
     }
-    100% {
-      transform: rotate(360deg);
+    .job-card{
+      width: 80%;
+      margin: 0 auto;
     }
   }
+
   
-  .loading-text {
-    margin-left: 10px;
-    color: black;
-  }
+
   

@@ -5,6 +5,7 @@ import { SharedService } from 'src/shared.service';
 import { AuthService } from 'src/app/services/auth.service'; 
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import Swal from 'sweetalert2';
+import { ProfileService, profileInterface } from 'src/app/services/profile.service';
 
 @Component({
   selector: 'app-auth-form',
@@ -13,7 +14,7 @@ import Swal from 'sweetalert2';
 })
 export class AuthFormComponent implements OnInit{
 
-  constructor(private authService: AuthService) { }
+  constructor(private authService: AuthService, private profileService: ProfileService) { }
   
   loggedIn: boolean = false;
   alertMessage!: string;
@@ -83,7 +84,7 @@ export class AuthFormComponent implements OnInit{
   loginUser() {
     const emailInput = document.getElementById("EmailInput-LI") as HTMLInputElement;
     const passwordInput = document.getElementById("passwordInput-LI") as HTMLInputElement;
-  
+
     if (emailInput && passwordInput) {
       const email = emailInput.value;
       const password = passwordInput.value;
@@ -106,7 +107,18 @@ export class AuthFormComponent implements OnInit{
         });
     }
   }
+
+//   public isTokenSaved(): boolean {
+//     return !!localStorage.getItem('token');
+//   }
   
+//   Check(){
+//     if (this.isTokenSaved()) {console.log("Success");
+// } else {console.log("Error Error Error");
+// }
+//   }
+  
+
   registerUser() {
     const emailInput = document.getElementById("email-SU") as HTMLInputElement;
     const passwordInput = document.getElementById("passwordInput-SU") as HTMLInputElement;
@@ -114,7 +126,7 @@ export class AuthFormComponent implements OnInit{
     if (emailInput && passwordInput) {
       const email = emailInput.value;
       const password = passwordInput.value;
-  
+      
       this.authService.register(email, password)
         .then(() => {
           Swal.fire('Registration Successful!', '', 'success');
@@ -122,18 +134,47 @@ export class AuthFormComponent implements OnInit{
             this.alertMessage = '';
             this.animationState = '';
           }, 3000);
+///////////////////////////////////////////////Adding profile for user
+      this.createProfile();
+              })
+              .catch((error) => {
+                console.log('Registration Error:', error);
+                Swal.fire('Error', 'Registration failed.', 'error');
+                setTimeout(() => {
+                  this.alertMessage = '';
+                  this.animationState = '';
+                }, 3000);
+              });
+          }
+        }
+      async createProfile() {
+        const ageInput = document.getElementById("age-SU") as HTMLInputElement;
+        const nameInput = document.getElementById("nameInput-SU") as HTMLInputElement;
+        const userID = await this.authService.getUserId(); 
+        const age = Number(ageInput.value);
+        if (userID) {
+          const profile: profileInterface = {
+            id: "", 
+            image: "https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png",
+            name: nameInput.value, 
+            age: age,
+            userID: userID,
+            experience: 0
+          };
+      this.profileService.addProfile(profile)
+        .then(() => {
+          console.log('Profile creation successful!');
         })
         .catch((error) => {
-          console.log('Registration Error:', error);
-          Swal.fire('Error', 'Registration failed.', 'error');
-          setTimeout(() => {
-            this.alertMessage = '';
-            this.animationState = '';
-          }, 3000);
+          console.log('Profile creation failed:', error);
         });
+    } else {
+      console.log('Unable to retrieve user ID');
     }
   }
-  
+
+
+
 
   forgotPassword() {
     this.showLoginButton = false;

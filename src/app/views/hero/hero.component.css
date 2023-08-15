@@ -414,3 +414,33 @@
     transform: translateX(0);
   }
 }
+
+
+@media only screen and (max-width: 705px){
+  .hero-games{
+    display: flex;
+    flex-wrap: wrap-reverse;
+    gap: 30px;
+  }
+  .hero-games .image{
+    justify-content: space-between;
+  }
+  .hero-games .image,
+  .hero-games .image img{
+    width: 14vw;
+    margin: 0;
+  }
+}
+
+@media only screen and (max-width: 450px){
+  .hero-games .image{
+    height: 40vw; 
+    width: 40vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-games .image img{
+    width: 28vw;
+  }
+}

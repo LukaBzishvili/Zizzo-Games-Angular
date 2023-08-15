@@ -1,8 +1,10 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, Subject } from 'rxjs';
+import { BehaviorSubject, Observable, Subject, map } from 'rxjs';
 import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { trigger, state, style, animate, transition } from '@angular/animations';
 import { Router } from '@angular/router';
+import * as firebase from 'firebase/compat';
+import { Token } from '@angular/compiler';
 
 @Injectable({
   providedIn: 'root'
@@ -44,7 +46,17 @@ export class AuthService {
     });
   }
 
-
+  public updateEmail(newEmail: string): Promise<void> {
+    return this.afAuth.currentUser.then((user) => {
+      if (user) {
+        return user.updateEmail(newEmail);
+      } else {
+        throw new Error('User not logged in.');
+      }
+    });
+  }
+  
+  
 
   // Reload page
   private logoutSubject: Subject<void> = new Subject<void>();
@@ -91,6 +103,10 @@ export class AuthService {
     return this.loggedInSubject;
   }
 
+  public getCurrentUser(): Observable<firebase.default.User | null> {
+    return this.afAuth.user;
+  }
+
   public async getUserId(): Promise<string | null> {
     const user = await this.afAuth.currentUser;
     if (user) {
@@ -100,12 +116,17 @@ export class AuthService {
     }
   }
 
-  public async getCurrentUserEmail(): Promise<string | null> {
-    const user = await this.afAuth.currentUser;
-    if (user) {
-      return user.email;
-    } else {
-      return null;
-    }
-  }
+  public getCurrentUserEmail(): Promise<string | null> {
+    return new Promise((resolve, reject) => {
+      this.afAuth.authState.subscribe((user) => {
+        if (user && user.email) {
+          resolve(user.email);
+        } else {
+          resolve(null);
+        }
+      }, (error) => {
+        reject(error);
+      });
+    });
+  }  
 }

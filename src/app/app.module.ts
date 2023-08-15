@@ -24,6 +24,12 @@ import { FirestoreModule } from '@angular/fire/firestore';
 import { FormsModule } from '@angular/forms';
 import { AdminComponent } from './views/admin/admin.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProfileComponent } from './views/profile/profile.component';
+import { ProfileEditComponent } from './views/profile-edit/profile-edit.component';
+import { FanPageComponent } from './views/fan-page/fan-page.component';
+import { FanCardsComponent } from './views/fan-cards/fan-cards.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { CommentsComponent } from './views/comments/comments.component';
 
 
 @NgModule({
@@ -43,7 +49,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MainPageComponent,
     CommunityManagerComponent,
     CardsComponent,
-    AdminComponent
+    AdminComponent,
+    ProfileComponent,
+    ProfileEditComponent,
+    FanPageComponent,
+    FanCardsComponent,
+    CommentsComponent,
   ],
   imports: [
     BrowserModule,
@@ -52,7 +63,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     AngularFireAuthModule,
     FirestoreModule,
     FormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

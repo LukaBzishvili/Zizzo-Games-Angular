@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { profileInterface } from './profile.service';
 
 export interface CardInterface {
   id: string;
@@ -19,7 +20,7 @@ export interface CardInterface {
 export class CardService {
 
   constructor(private afs: AngularFirestore) { }
-  
+
   public addCard(card: CardInterface) {
     return this.afs.collection('/cards').add(card).then(res => {
       card.id = res.id;
